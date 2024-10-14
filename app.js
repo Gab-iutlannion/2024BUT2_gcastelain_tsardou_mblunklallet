@@ -25,6 +25,10 @@ app.get('/acceuil', function (req, res) {
     res.render("./acceuil");
 });
 
+app.get('/connexion', function (req, res) {
+    res.render("./connexion");
+});
+
 
 
 
