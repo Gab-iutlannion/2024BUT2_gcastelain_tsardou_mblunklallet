@@ -34,3 +34,10 @@ nav{
 h1{
     font-size: 2em;
 }
+
+#id{
+    background-color: #F1F1F1;
+    height: 50px;
+    width: 20%;
+
+}

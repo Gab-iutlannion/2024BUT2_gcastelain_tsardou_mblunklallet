@@ -18,11 +18,15 @@ app.get('/', async function(req, res) {
 });
 
 app.get('/nav', function (req, res) {
-    res.render("./nav",);
+    res.render("./nav");
+ });
+
+ app.get('/acceuil', function (req, res) {
+    res.render("./acceuil");
  });
 
 
- 
+
 app.use((req, res) => {
     res.status(404).render("404");
 })
