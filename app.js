@@ -19,11 +19,12 @@ app.get('/', async function(req, res) {
 
 app.get('/nav', function (req, res) {
     res.render("./nav");
- });
+});
 
- app.get('/acceuil', function (req, res) {
+app.get('/acceuil', function (req, res) {
     res.render("./acceuil");
- });
+});
+
 
 
 
