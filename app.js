@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-
 const utilisateurs = require("./models/utilisateurs.js")
 
 app.set('view engine', 'ejs');
@@ -8,7 +7,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 
-app.get('/', async(req, res) => { 
+app.get('/', async function(req, res) { 
     try {
         let user = await utilisateurs.getUserById(1);
         res.render('index', { user });
