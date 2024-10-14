@@ -1,0 +1,36 @@
+*{
+    color: #F1F1F1;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: #3C096C;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+
+}
+
+
+#section1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20%;
+    
+}
+
+#section2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+    background-color: red;
+    
+}
+
+h1{
+    font-size: 2em;
+}

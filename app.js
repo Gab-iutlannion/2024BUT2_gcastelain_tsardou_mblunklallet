@@ -17,12 +17,16 @@ app.get('/', async function(req, res) {
     };
 });
 
+app.get('/nav', function (req, res) {
+    res.render("./nav",);
+ });
 
+
+ 
 app.use((req, res) => {
     res.status(404).render("404");
 })
 
 app.listen(3000 , () => {
    console.log('Server running on port 3000');
-}
-)
+})
