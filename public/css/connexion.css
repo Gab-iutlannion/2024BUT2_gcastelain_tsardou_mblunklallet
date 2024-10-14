@@ -1,5 +1,77 @@
 .login{
     background-color: #3C096C;
-    height: 60%;
+    height: 50%;
     width: 40%;
+    border-radius: 10px;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+form{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+input[type="text"],
+input[type="password"] {
+    width: 60%;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    color: black;
+    font-size: 1.3em;
+
+}
+
+button {
+    width: 30%;
+    padding: 10px;
+    background-color: #E0AAFF;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    font-weight: bold;
+    transition: .3s ease-out;
+
+}
+
+button:hover {
+    background-color: #3C096C;
+    border: 2px solid white;
+    color: white;
+}
+
+form a{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+form a:hover{
+    text-decoration: underline;
 }
