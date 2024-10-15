@@ -1,7 +1,39 @@
-.product
-{
+.productBox{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 1304px;
     height: 761px;
+    margin-top: 100px;
+}
+.left {
+    margin-top: 480px;
     display: flex;
+    width: 35px;
+    height: 47px;
+    margin-left: 100px;
+
+}
+
+.right {
+    margin-top: 480px;
+    width: 35px;
+    height: 47px;
+    margin-right: 100px;
+}
+
+.left:hover, .right:hover {
+    cursor: pointer; /* Change le curseur en mode "cliquable" */
+}
+
+.information
+{
+background-color: #F2F2F2;
 
 }
