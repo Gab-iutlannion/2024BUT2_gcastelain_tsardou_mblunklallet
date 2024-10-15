@@ -73,7 +73,7 @@ app.post('/connexion', (req, res) => {
                             req.session.login = true;
                             req.session.username = identifiant;
                             req.session.role = roleResult[0].type_utilisateur;
-        
+                                res.redirect('/nav')
                                 console.log('l utilisateur est connécté en tant que ' + roleResult[0].type_utilisateur );
                         }
                         else{
