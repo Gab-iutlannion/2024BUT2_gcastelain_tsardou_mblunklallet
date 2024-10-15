@@ -13,17 +13,35 @@
 <main>
     <div class="productBox">
 
-        <img class="left" src="../img/left.png">
+        <button class="left" onclick="scrollPrev()">
+            <img src="../img/left.png" alt="Flèche gauche">
+        </button>
+
         <img class="product" src="../img/machine.png">
-        <img class="right" src="../img/right.png">
+        <button class="right" onclick="scrollNext()">
+            <img src="../img/right.png" alt="Flèche droite">
+        </button>
+
 
     </div>
 
     <div class="information">
+        <h1 class="subtitleProduct">
+            Force
+        </h1>
 
+        <a class="productTitle">
+            Multipress
+        </a>
 
+        <p class="productPrice">
+            160€/j
+        </p>
+        <p class="productDescription">
+            La multipress est une machine polyvalente de<br> musculation, idéale pour travailler les pectoraux,<br> épaules et jambes. Elle permet des exercices<br>guidés avec barre, adaptée à tous niveaux.        </p>
     </div>
 </main>
-
+<script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+<script src="../models/product.js"></script>
 </body>
 </html>
