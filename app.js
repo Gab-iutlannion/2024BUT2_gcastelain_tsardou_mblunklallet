@@ -25,12 +25,16 @@ app.get('/nav', function (req, res) {
     res.render("./nav");
 });
 
-app.get('/acceuil', function (req, res) {
-    res.render("./acceuil");
+app.get('/accueil', function (req, res) {
+    res.render("./accueil");
 });
 
 app.get('/connexion', function (req, res) {
     res.render("./connexion");
+});
+
+app.get('/test', function (req, res) {
+    res.render("./test");
 });
 
 
@@ -73,7 +77,7 @@ app.post('/connexion', (req, res) => {
                             req.session.login = true;
                             req.session.username = identifiant;
                             req.session.role = roleResult[0].type_utilisateur;
-                                res.redirect('/nav')
+                                res.redirect('/test');
                                 console.log('l utilisateur est connécté en tant que ' + roleResult[0].type_utilisateur );
                         }
                         else{
