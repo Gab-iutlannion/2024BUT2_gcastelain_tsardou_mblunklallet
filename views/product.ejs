@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +11,23 @@
 <%- include('./nav') %>
 
 <main>
-    <div class="productBox">
+    <div class="productBox" class="embla">
 
         <button class="left" onclick="scrollPrev()">
             <img src="../img/left.png" alt="Flèche gauche">
         </button>
 
-        <img class="product" src="../img/machine.png">
+        <div class="embla">
+            <div class="embla__container">
+                <div class="embla__slide">
+                    <img class="product" src="../img/machine.png">
+                </div>
+                <div class="embla__slide">
+                    <img class="product" src="../img/sport.png">
+                </div>
+            </div>
+        </div>
+
         <button class="right" onclick="scrollNext()">
             <img src="../img/right.png" alt="Flèche droite">
         </button>
@@ -42,6 +52,19 @@
     </div>
 </main>
 <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
-<script src="../models/product.js"></script>
+<script>
+    const emblaNode = document.querySelector('.embla')
+    const options = { loop: true }
+
+    const emblaApi = emblaNode ? EmblaCarousel(emblaNode, options) : null;
+
+    function scrollNext() {
+        emblaApi?.scrollNext();
+    }
+
+    function scrollPrev() {
+        emblaApi?.scrollPrev();
+    }
+</script>
 </body>
 </html>
