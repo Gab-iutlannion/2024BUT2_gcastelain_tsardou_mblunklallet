@@ -41,6 +41,10 @@ app.get('/product', function (req, res) {
     res.render("./product");
 });
 
+app.get('/footer', function (req, res) {
+    res.render("./footer");
+});
+
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
