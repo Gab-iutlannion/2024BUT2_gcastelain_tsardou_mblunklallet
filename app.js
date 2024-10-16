@@ -11,6 +11,25 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(session({
+    secret: 'patate',                   // Clé secrète utilisée pour signer le cookie de session
+    resave: false,                     // Ne pas enregistrer la session si elle n'a pas été modifiée
+    saveUninitialized: true,           // Sauvegarder une session non initialisée
+    cookie: { secure: false }          // Assurez-vous que "secure" est à true en production (HTTPS)
+}));
+
+app.use(function(req, res, next){
+    if(req.session.username){
+        res.locals.identifiant = req.session.username;
+        
+    }
+   
+    next();
+});
+
+
 app.get('/', async function(req, res) { 
     try {
         let user = await utilisateurs.getUserById(1);
@@ -42,15 +61,6 @@ app.get('/product', function (req, res) {
 });
 
 
-
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(session({
-    secret: 'patate',                   // Clé secrète utilisée pour signer le cookie de session
-    resave: false,                     // Ne pas enregistrer la session si elle n'a pas été modifiée
-    saveUninitialized: true,           // Sauvegarder une session non initialisée
-    cookie: { secure: false }          // Assurez-vous que "secure" est à true en production (HTTPS)
-}));
 
 app.post('/connexion', (req, res) => {
     const identifiant = req.body.identifiant;  
