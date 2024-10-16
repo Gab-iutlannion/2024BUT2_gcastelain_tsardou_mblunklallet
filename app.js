@@ -22,8 +22,7 @@ app.use(session({
 
 app.use(function(req, res, next){
     if(req.session.username){
-        res.locals.identifiant = req.session.username;
-        
+        res.locals.identifiant = req.session.username;  
     }
    
     next();
