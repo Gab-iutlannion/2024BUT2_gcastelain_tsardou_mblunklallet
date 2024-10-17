@@ -68,6 +68,14 @@ header .texte {
     height: 80;
 }
 
+.Nouveautes h2 {
+    color: black;
+}
+
+.Nouveautes h3 {
+    color: black;
+}
+
 .Item {
     display: flex;
     flex-direction: column;
@@ -148,6 +156,10 @@ header .texte {
 }
 
 .Box3 p{
+    color: black;
+}
+
+.Box3 h1{
     color: black;
 }
 
