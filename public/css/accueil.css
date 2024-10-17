@@ -10,20 +10,168 @@ header {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 20%;
+    height: 30%;
     background-color: #070707;
-}body {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
 }
 
-header {
+header.p {
+    color: white;
+}
+
+.video {
+    flex-direction: column;
+    justify-content: center;
+    width: 100vh;
+    height: 100vh;
+    border: solid 5px black;
+}
+
+header .texte {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    align-items: center;
     height: 20%;
+}
+
+.texte a{
+    scroll-behavior: smooth;
+    width: auto;
+    height: auto;
+}
+
+.Box1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2px;
+    background-color: #F3F3F3;
+}
+
+.Box1 .texte {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Nouveautes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    height: 80;
+}
+
+.Item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5%;
+    height: 51vh;
+    width: 20%;
+    border: solid 2px black;
+}
+
+.Item a{
+    width: auto;
+    height: auto;
+}
+
+.Item .image_produit {
+    width: 90%;
+    height: auto;
+}
+
+.Box2 {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2px;
     background-color: #070707;
+}
+
+.Box2 .image {
+    display: block;
+    width: 40%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.image .image_fille {
+    display: block;
+    width: 90%;
+    height: auto;
+}
+
+.Box2 .texte {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+    height: 60%;
+}
+
+.Box2 h1{
+    color: white;
+}
+
+.Box2 h2{
+    color: white;
+}
+
+.Box3 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2px;
+    background-color: #F3F3F3;
+}
+
+.Box3 .texte{ 
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Box3 p{
+    color: black;
+}
+
+.Box3 .image {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.image_homme {
+    width: 80%;
+    height: auto;
+}
+
+.Box3 .block{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    width: 40%;
+    height: 10%;
+    background-color: #EFEFEF;
+    border-radius: 20px;
 }
