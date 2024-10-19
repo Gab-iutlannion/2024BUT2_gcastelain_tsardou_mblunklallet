@@ -18,7 +18,18 @@
         <div id="section2">
             <input type="search" id="recherche" name="q" placeholder="Rechercher" />
             <p>|</p>
-            <a href="connexion">Se Connecter</a>
+            <% if (login == true && role == 'admin'){ %>
+            <a class="ajout" href="inscription_admin">
+                <button><p>Ajouter un agent</p></button>
+            </a>
+            <p>|</p>
+            <% } %>
+            <% if (login == true){ %>
+                <a href=""><img src="img/tete.svg" alt=""></a>
+                <a href=""><img src="img/panier.svg" alt=""></a>
+            <% } else { %>
+                <a href="connexion">Se Connecter</a>
+            <% } %>
         </div>
     </nav>
 

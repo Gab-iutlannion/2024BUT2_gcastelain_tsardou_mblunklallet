@@ -17,14 +17,23 @@ app.use(session({
     secret: 'patate',                   // Clé secrète utilisée pour signer le cookie de session
     resave: false,                     // Ne pas enregistrer la session si elle n'a pas été modifiée
     saveUninitialized: true,           // Sauvegarder une session non initialisée
-    cookie: { secure: false }          // Assurez-vous que "secure" est à true en production (HTTPS)
+    cookie: { secure: false }  
+            // Assurez-vous que "secure" est à true en production (HTTPS)
 }));
 
 app.use(function(req, res, next){
     if(req.session.username){
         res.locals.identifiant = req.session.username;  
     }
-   
+    if(req.session.role){
+        res.locals.role = req.session.role;  
+    }
+    if(req.session.login){
+        res.locals.login = req.session.login;  
+    }
+   else{
+    res.locals.login = false;  
+   }
     next();
 });
 
@@ -63,6 +72,14 @@ app.get('/footer', function (req, res) {
     res.render("./footer");
 });
 
+app.get('/inscription', function (req, res) {
+    res.render("./inscription");
+});
+
+app.get('/inscription_admin', function (req, res) {
+    res.render("./inscription_admin");
+});
+
 
 
 app.post('/connexion', (req, res) => {
@@ -73,7 +90,8 @@ app.post('/connexion', (req, res) => {
         const user = "SELECT login, password FROM utilisateur WHERE login = ?";
         const role = "SELECT type_utilisateur FROM utilisateur WHERE login = ? ";
 
-        
+       
+
             database.query(user, [identifiant], (err, userResult) =>{
             if (err){
                 res.send('L identifiant n est pas bon');
@@ -94,7 +112,7 @@ app.post('/connexion', (req, res) => {
                             req.session.login = true;
                             req.session.username = identifiant;
                             req.session.role = roleResult[0].type_utilisateur;
-                                res.redirect('/test');
+                                res.redirect('/accueil');
                                 console.log('l utilisateur est connécté en tant que ' + roleResult[0].type_utilisateur );
                         }
                         else{
@@ -124,7 +142,47 @@ app.post('/connexion', (req, res) => {
    
 });
 
+app.post('/inscription', (req,res)=>{
+    const prenom = req.body.prenom; 
+    const nom = req.body.nom; 
+    const idenfifiant = req.body.identifiant; 
+    const mdp = req.body.mdp;
+    const date = req.body.date;
+    const mail = req.body.mail;
 
+    var ajout = "INSERT INTO utilisateur ( login, password, nom, prenom, ddn, email, type_utilisateur) VALUES (?,?,?,?,?,?,?)";
+
+    database.query(ajout, [ idenfifiant, mdp, nom, prenom, date, mail, 'client'], (err, resultat) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Erreur lors de l\'inscription');
+        } else {
+            res.redirect('/connexion');
+        }
+    });
+
+});
+
+app.post('/inscription_admin', (req,res)=>{
+    const prenom = req.body.prenom; 
+    const nom = req.body.nom; 
+    const idenfifiant = req.body.identifiant; 
+    const mdp = req.body.mdp;
+    const date = req.body.date;
+    const mail = req.body.mail;
+
+    var ajout = "INSERT INTO utilisateur ( login, password, nom, prenom, ddn, email, type_utilisateur) VALUES (?,?,?,?,?,?,?)";
+
+    database.query(ajout, [ idenfifiant, mdp, nom, prenom, date, mail, 'agent'], (err, resultat) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Erreur lors de l\'inscription');
+        } else {
+            res.redirect('/inscription_admin');
+        }
+    });
+
+});
 
 
 

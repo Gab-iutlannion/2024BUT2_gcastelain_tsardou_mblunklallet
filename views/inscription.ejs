@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/connexion.css">
+</head>
+<body>
+    <%- include('./nav') %> 
+
+    <main>
+        <div class="login">
+            <h1>Inscription</h2>
+            <form action="#" method="POST">
+               
+                <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+
+                <input type="text" id="nom" name="nom" placeholder="Nom" required>
+
+                <input type="text" id="identifiant" name="identifiant" placeholder="Identifiant" required>
+    
+                <input type="password" id="password" name="mdp" placeholder="Mot de passe" required>
+
+                <input type="date" id="date" name="date" placeholder="Date de naissance" required>
+
+                <input type="text" id="mail" name="mail" placeholder="Adresse mail" required>
+    
+                <button id="envoie" type="submit">S'inscrire</button>
+
+            </form>
+        </div>
+    </main>
+
+
+    <%- include('./footer') %>
+</body>
+</html>

@@ -18,12 +18,8 @@ header.p {
     color: white;
 }
 
-.video {
-    flex-direction: column;
-    justify-content: center;
-    width: 100vh;
-    height: 100vh;
-    border: solid 5px black;
+video {
+   height: 100vh;
 }
 
 header .texte {
@@ -39,7 +35,12 @@ header .texte {
     width: auto;
     height: auto;
 }
-
+#changement{
+   margin-top: -200px;
+}
+#discover{
+    color: black;
+}
 .Box1 {
     display: flex;
     flex-direction: column;

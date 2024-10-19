@@ -7,6 +7,14 @@
 </head>
 <body>
     <%= identifiant %>
+    <% if (role == 'client'){ %>
+        <h1> <%= role %> </h1>
+    <% } %>
        
+    <% if (login == true){ %>
+        <h1> connecté</h1>
+    <% } else{ %>
+        <h1> pas connecté</h1>
+    <% } %>
 </body>
 </html>

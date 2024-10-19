@@ -30,7 +30,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 50%;
+    width: 60%;
     
     
 }
@@ -55,4 +55,33 @@ h1{
 }
 img{
     height: 20px;
+}
+
+
+.ajout button{
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    border: transparent;
+    background-color: #F1F1F1;
+    transition: .5s ease-in-out;
+
+}
+.ajout button p{
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: .2s ease-in-out;
+}
+
+.ajout button:hover{
+    cursor: pointer;
+    background-color: #3C096C;
+    border: solid 2px white;
+    scale: 1.05;
+   
+}
+
+.ajout button:hover p{
+    color: white;
 }
