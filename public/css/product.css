@@ -52,11 +52,12 @@
 
 .information
 {
-    
+
     background-color: #F2F2F2;
     display: flex;
-    
-
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
 }
 .subtitleProduct{
     font-family: "Afacad", sans-serif;
@@ -66,6 +67,23 @@
     margin-left: 80px;
     margin-top: 50px;
 }
+.rightProduct
+{
+    margin-top: 3%;
+    flex-direction: column;
+    margin-left: 30%;
+    display: flex;
+    gap: 30px;
+}
+.subtitleProduct2{
+    font-family: "Afacad", sans-serif;
+    font-size: 42px;
+    color: #000000;
+    font-weight: 600;
+    flex-direction: column;
+}
+
+
 
 .productTitle
 {
@@ -119,4 +137,35 @@
 .embla__slide {
     flex: 0 0 90%;
     min-width: 0;
+}
+.contenuProduct
+{
+    display: flex;
+}
+.panierProduct{
+    font-size: 1.5em;
+    font-family: "koho", sans-serif;
+    color: #050505;
+    font-weight: 400;
+
+}
+.btn{
+    font-family: "koho", sans-serif;
+    font-weight: 600;
+    background-color: #000;
+    border-color: #000;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 7vh;
+    padding: 1vh;
+    border-radius: 0;
+    transition: .1s ease-in-out;
+}
+
+.btn:hover{
+    background-color: white;
+    border-color: black;
+    color: black;
+    cursor: pointer;
 }
