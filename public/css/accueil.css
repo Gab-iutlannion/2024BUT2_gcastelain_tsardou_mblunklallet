@@ -169,6 +169,8 @@ header .texte {
     height: 100vh;
     justify-content: center;
     align-items: flex-end;
+    margin-bottom: 10%;
+
 }
 
 .image_homme {
