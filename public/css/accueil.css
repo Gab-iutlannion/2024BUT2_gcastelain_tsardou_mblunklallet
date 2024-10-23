@@ -169,7 +169,7 @@ header .texte {
     height: 100vh;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: 10%;
+    margin-bottom: 7%;
 
 }
 
@@ -188,4 +188,8 @@ header .texte {
     height: 10%;
     background-color: #EFEFEF;
     border-radius: 20px;
+}
+.decouvrir:hover{
+    font-size: 1.2rem;
+    transition: 0.15s;
 }
