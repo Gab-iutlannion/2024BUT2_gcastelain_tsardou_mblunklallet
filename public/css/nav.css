@@ -85,3 +85,7 @@ img{
 .ajout button:hover p{
     color: white;
 }
+.logoNav:hover
+{
+    cursor: pointer;
+}
