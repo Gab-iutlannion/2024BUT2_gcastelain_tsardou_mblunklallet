@@ -168,4 +168,12 @@
     border-color: black;
     color: black;
     cursor: pointer;
+
+}
+
+.dateProduct{
+    font-size: 2rem;
+    color: black;
+    padding-left: 10px;
+
 }
