@@ -71,10 +71,12 @@ header .texte {
 
 .Nouveautes h2 {
     color: black;
+    font-weight: normal;
 }
 
 .Nouveautes h3 {
     color: black;
+    font-weight: normal;
 }
 
 .Item {

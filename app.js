@@ -80,6 +80,10 @@ app.get('/inscription_admin', function (req, res) {
     res.render("./inscription_admin");
 });
 
+app.get('/catalogue', function (req, res) {
+    res.render("./catalogue");
+});
+
 
 
 app.post('/connexion', (req, res) => {
