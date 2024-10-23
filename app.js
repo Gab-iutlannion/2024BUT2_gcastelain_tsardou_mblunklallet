@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const utilisateurs = require("./models/utilisateurs.js")
+const product = require("./models/product.js");
 const database = require('./models/database.js');
 const md5 = require('md5');
 const session = require('express-session');
@@ -48,6 +49,16 @@ app.get('/', async function(req, res) {
     };
 });
 
+app.get('/', async function(req, res) { 
+    try {
+        let product = await product.getAllProduct();
+        res.render('catalogue', { product });
+    } catch (err) {
+        console.log(err);
+        res.status(500).send('Erreur lors de la récuperation des données');
+    };
+});
+
 app.get('/nav', function (req, res) {
     res.render("./nav");
 });
@@ -81,7 +92,7 @@ app.get('/inscription_admin', function (req, res) {
 });
 
 app.get('/catalogue', function (req, res) {
-    res.render("./catalogue");
+    res.render('catalogue', { liste_product });
 });
 
 

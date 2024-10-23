@@ -27,7 +27,7 @@ h3{
     color: #F3F3F3;
 }
 
-.Item {
+.product {
     display: flex;
     flex-direction: column;
     border-radius: 5%;
@@ -35,12 +35,12 @@ h3{
     width: 20%;
 }
 
-.Item a{
+.product a{
     width: auto;
     height: auto;
 }
 
-.Item .image_produit {
+.product .image_produit {
     width: 90%;
     height: auto;
     border-radius: 5%;
