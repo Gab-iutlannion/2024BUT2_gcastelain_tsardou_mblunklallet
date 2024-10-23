@@ -1,0 +1,96 @@
+.panierBox
+{
+    margin-left: 60%;
+    background-color: #3C096C;
+    height: 400px;
+    width: 30%;
+    border-radius: 30px;
+}
+.infoPanier
+{
+    height:55px;
+    width:60%;
+    border-radius: 30px;
+    margin-left: 10%;
+
+}
+.blocPanier
+{
+    background-color: white;
+    color: #070707;
+    padding: 4px 9px;
+    text-align: left;
+    font-size: 1.7rem;
+    font-weight: 400;
+    border-radius: 10px;
+    margin-top: 4%;
+}
+
+.panierNom{
+    margin-top: 20%;
+    color: #070707;
+    font-style: normal;
+    font-family: KoHo;
+
+}
+
+.panierPrice{
+    color: #070707;
+    margin-left: 40%;
+    margin-top: 20%;
+}
+.btnPanier {
+    color: #070707;
+    background-color: #E0AAFF;
+    margin-top: 15%;
+    font-family: KoHo;
+    font-weight: 600;
+    font-size: 1.8rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-around;
+    padding: 4px 50px;
+    display: inline-block;
+    text-align: center;
+    width: auto; /* Ajuste la largeur pour qu'elle s'adapte au texte et au padding */
+    cursor: pointer; /* Affiche un curseur pointer au survol */
+
+}
+
+
+.btnPanier:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #3C096C;
+    border-color: white;
+
+}
+
+.textPanier{
+    background-color: white;
+    color: #070707;
+    margin-top: 44%;
+    padding: 4px 50px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.resteenhautparpitie{
+    color: #3C096C;
+}
+.productTitlePanier{
+    color: #070707;
+    font-weight: 500;
+    font-family: Afacad;
+    font-size: 2rem;
+}
+
+.productDatePanier{
+    color: #070707;
+    font-weight: 600;
+    font-family: Koho;
+    font-size: 1.4rem;
+}
+.toutPanier{
+align-items: normal;
+}
