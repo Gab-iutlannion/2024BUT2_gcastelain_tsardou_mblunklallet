@@ -84,6 +84,11 @@ app.get('/catalogue', function (req, res) {
     res.render("./catalogue");
 });
 
+app.get('/panier', function (req, res) {
+    res.render("./panier");
+});
+
+
 
 
 app.post('/connexion', (req, res) => {
