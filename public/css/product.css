@@ -16,8 +16,8 @@
     margin-left: auto;
     margin-right: auto;
     width: 70%;
-    height: 40%;
-    margin-top: 400px;
+    height: 60%;
+    margin-top: 200px;
 }
 .left {
     display: flex;
@@ -133,6 +133,10 @@
 }
 .embla__container {
     display: flex;
+    height: 80vh;
+    flex: 1;
+
+
 }
 .embla__slide {
     flex: 0 0 90%;
@@ -168,12 +172,10 @@
     border-color: black;
     color: black;
     cursor: pointer;
-
 }
 
 .dateProduct{
     font-size: 2rem;
     color: black;
     padding-left: 10px;
-
 }
