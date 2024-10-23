@@ -6,12 +6,29 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/panier.css">
+    <link rel="stylesheet" href="css/product.css">
+
 </head>
 <body>
 <%- include('./nav') %><br><br><br><br><br><br><br>
 
 
 <main>
+    <div class="toutPanier">
+    <div class="productTitlePanier">
+        <img src="../public/img/Corde_a_sauter/1.avif">
+Corde de sautage    </div>
+    <div class="productDatePanier">
+<br> Début de la location
+    </div>
+    <input class="dateProduct" type="date" id="date" name="date"  required/>
+    <div class="productDatePanier">
+        <br> Fin de la location
+    </div>
+    <input class="dateProduct" type="date" id="date" name="date"  required/>
+
+
+
     <div class="panierBox">
         <div class="infoPanier">
             <div class="resteenhautparpitie">
@@ -24,7 +41,7 @@
             <button class="btnPanier">Payer</button>
         </div>
     </div>
-
+    </div>
 
 
 

@@ -78,3 +78,19 @@
 .resteenhautparpitie{
     color: #3C096C;
 }
+.productTitlePanier{
+    color: #070707;
+    font-weight: 500;
+    font-family: Afacad;
+    font-size: 2rem;
+}
+
+.productDatePanier{
+    color: #070707;
+    font-weight: 600;
+    font-family: Koho;
+    font-size: 1.4rem;
+}
+.toutPanier{
+align-items: normal;
+}
