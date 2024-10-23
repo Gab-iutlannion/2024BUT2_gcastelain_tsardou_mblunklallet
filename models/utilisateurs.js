@@ -12,10 +12,55 @@ async function getUserById (id) {
     });
 };
 
+async function getUserBylogin (login) {
+    info ="SELECT * FROM utilisateur WHERE login = ?";
+    return new Promise((resolve, reject) => {
+        database.query(info, login,  (err, results) => {
+            if (err) {
+                return reject(err);
+            }
+            console.log(results);
+            resolve(results);
+          
+        });
+    });
+};
+
+async function insertuser (prenom, nom, idenfifiant, mdp, date, mail) {
+    ajout ="INSERT INTO utilisateur ( login, password, nom, prenom, ddn, email, type_utilisateur) VALUES (?,?,?,?,?,?,?)";
+    return new Promise((resolve, reject) => {
+        database.query(ajout, [idenfifiant, mdp, nom, prenom, date, mail, 'client'], (err, results) => {
+            if (err) {
+                return reject(err);
+            }
+            console.log(results);
+            resolve(results);
+          
+        });
+    });
+};
+
+async function insertagent (prenom, nom, idenfifiant, mdp, date, mail){
+    ajout ="INSERT INTO utilisateur ( login, password, nom, prenom, ddn, email, type_utilisateur) VALUES (?,?,?,?,?,?,?)";
+    return new Promise((resolve, reject) => {
+        database.query(ajout, [idenfifiant, mdp, nom, prenom, date, mail, 'agent'], (err, results) => {
+            if (err) {
+                return reject(err);
+            }
+            console.log(results);
+            resolve(results);
+          
+        });
+    });
+};
 
 
 
 
-module.exports = {getUserById};
+
+
+
+
+module.exports = {getUserById, getUserBylogin, insertuser, insertagent };
 
 
