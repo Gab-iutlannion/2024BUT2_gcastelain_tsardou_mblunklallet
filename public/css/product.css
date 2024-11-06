@@ -164,7 +164,7 @@
     margin-top: 7vh;
     padding: 1vh;
     border-radius: 0;
-    transition: .1s ease-in-out;
+    transition: .15s ease-in-out;
 }
 
 .btn:hover{
