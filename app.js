@@ -52,10 +52,10 @@ app.get('/', async function (req, res) {
     };
 });
 
-app.get('/', async function(req, res) { 
+app.get('/catalogue', async function(req, res) { 
     try {
-        let product = await product.getAllProduct();
-        res.render('catalogue', { product });
+        let liste_product = await product.getAllProduct();
+        res.render('catalogue', { liste_product });
     } catch (err) {
         console.log(err);
         res.status(500).send('Erreur lors de la récuperation des données');

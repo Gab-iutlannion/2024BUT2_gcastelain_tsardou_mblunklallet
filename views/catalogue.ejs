@@ -14,14 +14,17 @@
     <%- include('./nav') %>
 
     <div class="Nouveautes">
+        <% liste_product.forEach(function(produit){ %>
+
+       
             <div class="product">
                 <a href="">
-                    <img class="image_produit" src="/img/Corde_a_sauter/1.avif" alt="image_produit"/>
-                    <h2><%= product.type %></h2>
-                    <h3><%= product.prix_location %></h3>
+                    <img class="image_produit" src="/img/<%= produit.id %>/1.avif %>" alt="image_produit"/>
+                    <h2><%= produit.type %></h2>
+                    <h3><%= produit.prix_location %>€ /J</h3>
                 </a>
             </div>
-        <% }); %>
+            <% }); %>
     </div>
 
     <%- include('./footer') %>
