@@ -29,6 +29,7 @@ main{
     align-items: center;
     width: 80%;
     height: auto;
+    margin-bottom: 4%;
 }
 
 .image_produit{
@@ -50,11 +51,17 @@ h3{
 
 .panierBox
 {
+    display: block;
+    position: fixed;
+    align-items: center;
+    right: 0;
+    justify-content: center;
     background-color: #3C096C;
     height: 400px;
     width: 30%;
     border-radius: 30px;
     margin-right: 2%    ;
+    margin-top: 10%;
 }
 .infoPanier
 {
