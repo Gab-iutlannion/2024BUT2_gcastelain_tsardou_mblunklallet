@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produit</title>
-    <link rel="stylesheet" href="css/product.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <%- include('./nav') %>
@@ -15,28 +15,28 @@
     <div class="productBox" >
 
         <button class="left" onclick="scrollPrev()">
-            <img src="../img/left.png" alt="Flèche gauche">
+            <img src="/img/left.png" alt="Flèche gauche">
         </button>
 
         <div class="embla">
             <div class="embla__container">
                 <div class="embla__slide">
-                    <img class="product" src="../img/1/1.avif">
+                    <img class="product" src="/img/<%= produit[0].id%>/1.avif">
                 </div>
                 <div class="embla__slide">
-                    <img class="product" src="../img/1/2.avif">
+                    <img class="product" src="/img/<%= produit[0].id%>/2.avif">
                 </div>
                 <div class="embla__slide">
-                    <img class="product" src="../img/1/3.avif">
+                    <img class="product" src="/img/<%= produit[0].id%>/3.avif">
                 </div>
                 <div class="embla__slide">
-                    <img class="product" src="../img/1/4.avif">
+                    <img class="product" src="/img/<%= produit[0].id%>/4.avif">
                 </div>
             </div>
         </div>
 
         <button class="right" onclick="scrollNext()">
-            <img src="../img/right.png" alt="Flèche droite">
+            <img src="/img/right.png" alt="Flèche droite">
         </button>
 
 
@@ -45,18 +45,18 @@
 
     <div class="information">
         <h1 class="subtitleProduct">
-            Force
+            <%= produit[0].type %>
         </h1>
 
         <a class="productTitle">
-            Multipress
+            <%= produit[0].modele %>
         </a>
 
         <p class="productPrice">
-            160€/j
+            <%= produit[0].prix_location %>/j
         </p>
         <p class="productDescription">
-            La Multipress est une machine polyvalente de<br>musculation, idéale pour travailler les pectoraux,<br> épaules et jambes. Elle permet des exercices<br>guidés avec barre, adaptée à tous niveaux.          <br><br><br><br>
+            <%= produit[0].description %>
 
         </p>
         <div class="rightProduct">
