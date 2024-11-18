@@ -2,6 +2,8 @@
     color: #F1F1F1;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+
 }
 
 nav{
@@ -13,17 +15,24 @@ nav{
     position: fixed;
     width: 100%;
     z-index: 10;
-    position: fixed;
-
+    top: 0; /* Colle la navigation en haut */
+    left: 0;
+    width: 100%;
+    height: 75px;
+    z-index: 1000;
 }
-
+/* Reset CSS */
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
 #section1{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 20%;
-    
+
 }
 
 #section2{
@@ -31,8 +40,8 @@ nav{
     align-items: center;
     justify-content: space-evenly;
     width: 60%;
-    
-    
+
+
 }
 
 
@@ -79,7 +88,7 @@ img{
     background-color: #3C096C;
     border: solid 2px white;
     scale: 1.05;
-   
+
 }
 
 .ajout button:hover p{
