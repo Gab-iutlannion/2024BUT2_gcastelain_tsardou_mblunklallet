@@ -27,13 +27,13 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: auto;
 }
 
 .image_produit{
     display: block;
-    width: 90%;
+    width: 80%;
     height: auto;
 }
 
