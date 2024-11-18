@@ -7,3 +7,13 @@ display: flex;
     margin-top: 300px;
 }
 
+h3{
+    color: #070707;
+    font-weight: 400;
+    text-align: center;
+}
+h2{
+    color: #070707;
+    font-weight: 600;
+    text-align: center;
+}
