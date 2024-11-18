@@ -78,9 +78,7 @@ app.get('/test', function (req, res) {
     res.render("./test");
 });
 
-app.get('/product', function (req, res) {
-    res.render("./product");
-});
+
 
 app.get('/footer', function (req, res) {
     res.render("./footer");
@@ -102,11 +100,20 @@ app.get('/panier', function (req, res) {
     res.render("./panier");
 });
 
-
-
 app.get('/info_profil', function (req, res) {
     res.render("./info_profil");
 });
+
+app.get('/product/:id', async (req, res) => {
+    let productId = parseInt(req.params.id); 
+    console.log(productId);
+    let produit = await product.getProductbyid(productId);
+    console.log(produit);
+
+    res.render('product', { produit });
+    
+});
+
 
 
 
