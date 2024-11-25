@@ -67,4 +67,9 @@ h3{
     height: 50px;
     width: 300px;
     border-radius: 10px;
+    font-size: 1.2em;
+}
+
+.ajouter button:hover{
+    
 }
