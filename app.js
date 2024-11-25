@@ -102,7 +102,13 @@ app.get('/panier', function (req, res) {
 
 app.get('/info_profil', function (req, res) {
     res.render("./info_profil");
+   res.render("./info_profil");
 });
+
+app.get('/ajouter', function (req, res) {
+    res.render("./ajouter");
+ });
+
 
 app.get('/product/:id', async (req, res) => {
     let productId = parseInt(req.params.id); 
@@ -197,7 +203,23 @@ app.post('/inscription_admin', async (req, res) => {
 
 });
 
+app.post('/ajouter', async (req, res) => {
+    const type = req.body.type;
+    const description = req.body.description;
+    const marque = req.body.marque;
+    const modele = req.body.modele;
+    const prix_location = req.body.prix_location;
 
+    try{
+        let produit = await product.addProduct(type, description, marque, modele, prix_location);
+        return res.redirect('/catalogue');
+    }
+    catch (err){
+        console.log(err);
+        res.status(500).send('Erreur lors de la récuperation des données');
+    }
+    
+});
 
 app.use((req, res) => {
     res.status(404).render("404");

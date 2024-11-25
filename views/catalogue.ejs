@@ -12,8 +12,13 @@
 <body>
 
     <%- include('./nav') %>
-
-    <div class="Nouveautes">
+    <% if (login == true && role == 'agent'){ %>
+        <a href="/ajouter" class="ajouter">
+            <button>Ajouter un produit</button>
+        </a>
+    <% } %>
+    <div class="nouveautes">
+        
         <% liste_product.forEach(function(produit){ %>
 
        

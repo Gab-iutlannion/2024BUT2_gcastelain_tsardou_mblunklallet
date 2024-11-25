@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,95 +8,102 @@
     <link rel="stylesheet" href="/css/product.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
-<%- include('./nav') %>
+    <%- include('./nav') %>
 
-<main>
+        <main>
 
-    <div class="productBox" >
+            <div class="productBox">
 
-        <button class="left" onclick="scrollPrev()">
-            <img src="/img/left.png" alt="Flèche gauche">
-        </button>
+                <button class="left" onclick="scrollPrev()">
+                    <img src="/img/left.png" alt="Flèche gauche">
+                </button>
 
-        <div class="embla">
-            <div class="embla__container">
-                <div class="embla__slide">
-                    <img class="product" src="/img/<%= produit[0].id%>/1.avif">
+                <div class="embla">
+                    <div class="embla__container">
+                        <div class="embla__slide">
+                            <img class="product" src="/img/<%= produit[0].id%>/1.avif">
+                        </div>
+                        <div class="embla__slide">
+                            <img class="product" src="/img/<%= produit[0].id%>/2.avif">
+                        </div>
+                        <div class="embla__slide">
+                            <img class="product" src="/img/<%= produit[0].id%>/3.avif">
+                        </div>
+                        <div class="embla__slide">
+                            <img class="product" src="/img/<%= produit[0].id%>/4.avif">
+                        </div>
+                    </div>
                 </div>
-                <div class="embla__slide">
-                    <img class="product" src="/img/<%= produit[0].id%>/2.avif">
-                </div>
-                <div class="embla__slide">
-                    <img class="product" src="/img/<%= produit[0].id%>/3.avif">
-                </div>
-                <div class="embla__slide">
-                    <img class="product" src="/img/<%= produit[0].id%>/4.avif">
-                </div>
+
+                <button class="right" onclick="scrollNext()">
+                    <img src="/img/right.png" alt="Flèche droite">
+                </button>
+
+
             </div>
-        </div>
+            <div class="contenuProduct">
 
-        <button class="right" onclick="scrollNext()">
-            <img src="/img/right.png" alt="Flèche droite">
-        </button>
+                <div class="information">
+                    <h1 class="subtitleProduct">
+                        <%= produit[0].type %>
+                    </h1>
 
+                    <a class="productTitle">
+                        <%= produit[0].modele %>
+                    </a>
 
-    </div>
-    <div class="contenuProduct">
+                    <p class="productPrice">
+                        <%= produit[0].prix_location %>€/j
+                    </p>
+                    <p class="productDescription">
+                        <%= produit[0].description %>
 
-    <div class="information">
-        <h1 class="subtitleProduct">
-            <%= produit[0].type %>
-        </h1>
+                    </p>
+                    <div class="rightProduct">
+                        <p class="subtitleProduct2">Début de la location
+                        </p>
+                        <input class="dateProduct" type="date" id="date" name="date" required />
 
-        <a class="productTitle">
-            <%= produit[0].modele %>
-        </a>
+                        <p class="subtitleProduct2">Fin de la location
+                        </p>
+                        <input class="dateProduct" type="date" id="date" name="date" required />
+                        <% if (produit[0].etat == 0){ %>
 
-        <p class="productPrice">
-            <%= produit[0].prix_location %>/j
-        </p>
-        <p class="productDescription">
-            <%= produit[0].description %>
+                        <button class="btn">Ajouter au panier</button>
 
-        </p>
-        <div class="rightProduct">
-        <p class="subtitleProduct2">Début de la location
-        </p>
-            <input class="dateProduct" type="date" id="date" name="date"  required/>
+                        <% } else{ %>
+                            <button class="btn">Déjà loué</button>
+                       <% } %>
 
-            <p class="subtitleProduct2">Fin de la location
-        </p>
-            <input class="dateProduct" type="date" id="date" name="date"  required/>
+                    </div>
 
-            <button class="btn">Ajouter au panier</button>
-
-        </div>
-
-    </div>
+                </div>
 
 
-    </div>
+            </div>
 
 
-</main>
-<%- include('./footer') %>
-<script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
-<script>
-    const emblaNode = document.querySelector('.embla')
-    const options = { loop: true }
+        </main>
+        <%- include('./footer') %>
+            <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+            <script>
+                const emblaNode = document.querySelector('.embla')
+                const options = { loop: true }
 
-    const emblaApi = emblaNode ? EmblaCarousel(emblaNode, options) : null;
+                const emblaApi = emblaNode ? EmblaCarousel(emblaNode, options) : null;
 
-    function scrollNext() {
-        emblaApi?.scrollNext();
-    }
+                function scrollNext() {
+                    emblaApi?.scrollNext();
+                }
 
-    function scrollPrev() {
-        emblaApi?.scrollPrev();
-    }
+                function scrollPrev() {
+                    emblaApi?.scrollPrev();
+                }
 
 
-</script>
+            </script>
 </body>
+
 </html>
