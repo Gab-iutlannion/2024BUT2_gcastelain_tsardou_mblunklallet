@@ -14,7 +14,7 @@ h3{
     font-weight: normal;
 }
 
-.Nouveautes {
+.nouveautes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
@@ -22,7 +22,7 @@ h3{
     color: #F3F3F3;
     max-width: 80%;
     margin: 0 auto;
-    margin: 10% auto 0 auto;
+    margin: 5% auto 0 auto;
 }
 
 .product {
@@ -49,4 +49,29 @@ h3{
 }
 .cataloguePrice{
     margin-top: 2%;
+}
+
+.ajouter{
+    margin-top: 150px;
+    width: min-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.ajouter button{
+    cursor: pointer;
+    background-color: #3C096C;
+    border: none;
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    transition: 0.35s;
+}
+
+.ajouter button:hover{
+    background-color: white;
+    border: 2px solid #3C096C;
+    color: black;
 }
