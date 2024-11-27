@@ -15,9 +15,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
-    height: 60%;
-    margin-top: 200px;
+    width: auto;
+    height: 90%;
+    margin-top: 50px;
 }
 .left {
     display: flex;
@@ -30,9 +30,7 @@
 {
     width: 35px;
     height: 47px;
-
-
-            }
+}
 
 .right {
     margin-right: 100px;
@@ -50,39 +48,48 @@
     cursor: pointer; /* Change le curseur en mode "cliquable" */
 }
 
-.information
-{
 
-    background-color: #F2F2F2;
-    width: 100vw;
-    margin-left: 0;
-    margin-right: 0;
-    display: grid;
-    grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
-    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr ;
-}
 .subtitleProduct{
     font-family: "Afacad", sans-serif;
     font-size: 40px;
     color: #050505;
     font-weight: 400;
-    grid-column: 0.1/0.4;
-    grid-row: 0.2/0.4;
+
 
 }
+
+.information
+{
+    background-color: #F2F2F2;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+}
+
 .rightProduct
 {
     margin-top: 3%;
     flex-direction: column;
-    margin-left: 30%;
+    margin-left: 15%;
     gap: 30px;
-    grid-column: 3/5;
+    display: flex;
+    flex: 1;
+    margin-bottom: 5%;
+}
+
+.leftProduct
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 7%;
+    margin-top: 3%;
+    flex: 1;
 
 }
 
 .btn
 {
-    grid-column: 2/3;
 }
 
 
@@ -98,12 +105,12 @@
 
 .productTitle
 {
+    margin-top: 3%;
     font-family: "koho", sans-serif;
     font-size: 64px;
     color: #050505;
     font-weight: 600;
-    grid-column: 1/2;
-    grid-row: 1/3;
+
     white-space: nowrap;
 
 
@@ -111,25 +118,22 @@
 
 .productPrice
 {
+    margin-top: 3%;
     font-family: "koho", sans-serif;
     font-size: 36px;
     color: #050505;
     font-weight: 600;
-    grid-column: 1/2;
-    grid-row: 1/3;
+
 
 
 }
 .productDescription
 {
+    margin-top: 5%;
     font-family: "koho", sans-serif;
     font-size: 32px;
     color: #050505;
     font-weight: 300;
-    grid-column: 1/3;
-    grid-row: 2/5;
-
-
 }
 
 .carousel-prev,
@@ -160,6 +164,7 @@
 .embla__slide {
     flex: 0 0 90%;
     min-width: 0;
+    max-height: 670px;
 }
 .contenuProduct
 {
@@ -179,11 +184,13 @@
     border-color: #000;
     color: white;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-top: 7vh;
     padding: 1vh;
     border-radius: 0;
     transition: .15s ease-in-out;
+    max-width: 600px;
+
 }
 
 .btn:hover{
@@ -197,4 +204,6 @@
     font-size: 2rem;
     color: black;
     padding-left: 10px;
+    max-width: 500px;
+
 }
