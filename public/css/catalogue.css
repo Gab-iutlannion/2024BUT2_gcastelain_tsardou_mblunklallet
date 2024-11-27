@@ -38,6 +38,11 @@ h3{
 .product a{
     width: auto;
     height: auto;
+    transition: transform 330ms ease-in-out;
+}
+
+.product a:hover{
+    transform: scale(1.06);
 }
 
 .product .image_produit {
