@@ -54,35 +54,46 @@
 {
 
     background-color: #F2F2F2;
-    display: flex;
     width: 100vw;
     margin-left: 0;
     margin-right: 0;
+    display: grid;
+    grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr ;
 }
 .subtitleProduct{
     font-family: "Afacad", sans-serif;
-    font-size: 48px;
+    font-size: 40px;
     color: #050505;
     font-weight: 400;
-    margin-left: 80px;
-    margin-top: 50px;
+    grid-column: 0.1/0.4;
+    grid-row: 0.2/0.4;
+
 }
 .rightProduct
 {
     margin-top: 3%;
     flex-direction: column;
     margin-left: 30%;
-    display: flex;
     gap: 30px;
+    grid-column: 3/5;
+
 }
+
+.btn
+{
+    grid-column: 2/3;
+}
+
+
+
+
 .subtitleProduct2{
     font-family: "Afacad", sans-serif;
     font-size: 42px;
     color: #000000;
     font-weight: 600;
-    flex-direction: column;
 }
-
 
 
 .productTitle
@@ -91,8 +102,11 @@
     font-size: 64px;
     color: #050505;
     font-weight: 600;
-    margin-left: -105px;
-    margin-top: 150px;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    white-space: nowrap;
+
+
 }
 
 .productPrice
@@ -101,8 +115,10 @@
     font-size: 36px;
     color: #050505;
     font-weight: 600;
-    margin-left: -290px;
-    margin-top: 290px;
+    grid-column: 1/2;
+    grid-row: 1/3;
+
+
 }
 .productDescription
 {
@@ -110,9 +126,10 @@
     font-size: 32px;
     color: #050505;
     font-weight: 300;
-    margin-left: -110px;
-    margin-top: 390px;
-    margin-bottom: 50px;
+    grid-column: 1/3;
+    grid-row: 2/5;
+
+
 }
 
 .carousel-prev,
@@ -135,6 +152,8 @@
     display: flex;
     height: 80vh;
     flex: 1;
+    width: auto; /* Conserve la largeur originale */
+    height: auto;
 
 
 }

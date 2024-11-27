@@ -44,16 +44,18 @@
     <div class="contenuProduct">
 
     <div class="information">
-        <h1 class="subtitleProduct">
+
+        <a class="subtitleProduct">
+            modèle <%= produit[0].modele %>
+        </a>
+
+        <h1 class="productTitle">
             <%= produit[0].type %>
         </h1>
 
-        <a class="productTitle">
-            <%= produit[0].modele %>
-        </a>
 
         <p class="productPrice">
-            <%= produit[0].prix_location %>/j
+            <%= produit[0].prix_location %>€/j
         </p>
         <p class="productDescription">
             <%= produit[0].description %>
