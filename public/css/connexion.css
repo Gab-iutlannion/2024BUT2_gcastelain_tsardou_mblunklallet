@@ -33,7 +33,6 @@ input[type="number"],
 input[type="date"] {
     width: 60%;
     height: 30px;
-    padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
