@@ -64,17 +64,20 @@
 
         </p>
         </div>
+        <% if (login == true){ %>
         <div class="rightProduct">
-            <form action="" method="POST">
+            <form action="/product" method="POST">
             <p class="subtitleProduct2">Début de la location</p>
-            <input class="dateProduct" type="date" id="date" name="date"  required/>
+            <input class="dateProduct" type="date" id="startDate" name="startDate"  required/>
 
             <p class="subtitleProduct2">Fin de la location</p>
-            <input class="dateProduct" type="date" id="date" name="date"  required/>
+            <input class="dateProduct" type="date" id="endDate" name="endDate"  required/>
+            <input type="hidden" name="productId" value="<%= produit[0].id %>" />
 
             <button class="btn" type="submit">Ajouter au panier</button>
             </form>
         </div>
+        <% } %>
 
     </div>
 

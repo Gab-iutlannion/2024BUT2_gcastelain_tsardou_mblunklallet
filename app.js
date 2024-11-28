@@ -112,8 +112,30 @@ app.get('/catalogue', function (req, res) {
     res.render('catalogue', { liste_product });
 });
 
-app.get('/panier', function (req, res) {
-    res.render("./panier");
+app.get('/panier', async function (req, res) {
+    try {
+        const liste_loc = await product.liste_location();
+        console.log(liste_loc);
+        const liste_produit = [];
+
+        for (const location of liste_loc) {
+            if (location.date) {
+                location.date = moment(location.date).format('YYYY-MM-DD');
+            }
+
+            try {
+                const produit = await product.getProductbyid(location.produit_id);
+                liste_produit.push(produit);
+            } catch (error) {
+                console.error(`Erreur lors de la récupération du produit pour la location id : ${location.id}`, error);
+            }
+        }
+
+        res.render('panier', { liste_loc, liste_produit });
+    } catch (error) {
+        console.error("Erreur lors de la récupération du panier : ", error);
+        res.status(500).send("Erreur serveur.");
+    }
 });
 
 app.get('/info_profil', function (req, res) {
@@ -164,7 +186,23 @@ app.get('/product/:id', async (req, res) => {
     
 });
 
-app.post('/product')
+app.post('/product', async (req, res) => {
+    const { productId, startDate, endDate } = req.body;
+    const user_id = req.session.userId;
+
+    console.log(user_id);
+    console.log(productId, startDate, endDate);
+    if (!productId || !startDate || !endDate) {
+        return res.status(400).send("Veuillez compléter tout les champs");
+    }
+    try {
+        let location = await product.addLocation(productId, startDate, endDate, user_id);
+        return res.redirect('panier');
+    } catch (error) {
+        console.log('Erreur lors de l\'ajout de la location:', error);  
+        return res.status(500).send("Une erreur est survenue lors de l'ajout de la location.");
+    }
+});
 
 
 app.post('/connexion', async (req, res) => {
