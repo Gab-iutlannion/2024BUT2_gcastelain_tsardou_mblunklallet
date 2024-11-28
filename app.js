@@ -102,6 +102,52 @@ app.get('/panier', function (req, res) {
 app.get('/info_profil', function (req, res) {
     res.render("./info_profil");
    res.render("./info_profil");
+
+   if (!req.session.login) {
+    return res.redirect('/connexion');
+}
+
+const user = {
+    identifiant: req.session.username,
+    nom: req.session.nom,
+    prenom: req.session.prenom,
+    ddn: req.session.ddn,
+    email: req.session.email
+};
+
+res.render('info_profil', user);
+});
+
+app.post('/update_password', async (req, res) => {
+    const { password, newpassword } = req.body;
+    const userId = req.session.userId;
+
+    if (!userId) {
+        return res.status(401).send('Vous devez être connecté pour changer votre mot de passe.');
+    }
+
+    try {
+        const user = await utilisateurs.getUserBylogin(identifiant);
+
+        if (!user) {
+            return res.status(404).send("Utilisateur introuvable.");
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(400).send("L'ancien mot de passe est incorrect.");
+        }
+
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(newpassword, salt);
+
+        await utilisateurs.updatePassword(userId, hashedPassword);
+
+        res.redirect('/info_profil');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Erreur lors de la modification du mot de passe.");
+    }
 });
 
 app.get('/ajouter', function (req, res) {

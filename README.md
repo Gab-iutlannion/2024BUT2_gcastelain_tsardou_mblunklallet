@@ -45,3 +45,7 @@ Architecture du dossier =
     - Réalisation de la fonction d'affichage de tous les produits dans les items avec l'aide de Thibault.
     - Dans la suit edu projet Moritz à fait quelques modification sur la fonction pour des éléments à implanter.
 
+## Réalisation fin de projet
+- Correction d'une erreur pour l'affichage de la page `info_profil`.
+- Mise en place de la `fonction de changement de mot de passe` mais fonction ne marche pas.
+
