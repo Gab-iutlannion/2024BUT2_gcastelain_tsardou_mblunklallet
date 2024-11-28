@@ -6,6 +6,7 @@ const product = require("./models/product.js");
 const database = require('./models/database.js');
 const md5 = require('md5');
 const session = require('express-session');
+const moment = require('moment');
 
 app.set('view engine', 'ejs');
 
@@ -14,11 +15,11 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
-    secret: 'patate',                   // Clé secrète utilisée pour signer le cookie de session
-    resave: false,                     // Ne pas enregistrer la session si elle n'a pas été modifiée
-    saveUninitialized: true,           // Sauvegarder une session non initialisée
+    secret: 'patate',                   
+    resave: false,                     
+    saveUninitialized: true,           
     cookie: { secure: false }
-    // Assurez-vous que "secure" est à true en production (HTTPS)
+    
 }));
 
 app.use(function (req, res, next) {
@@ -163,7 +164,7 @@ app.get('/product/:id', async (req, res) => {
     
 });
 
-
+app.post('/product')
 
 
 app.post('/connexion', async (req, res) => {
@@ -221,10 +222,19 @@ app.post('/inscription', async (req, res) => {
     const date = req.body.date;
     const mail = req.body.mail;
 
+    
     try{
+
+        let age = moment().diff(moment(date));
+        if (age >= 18){
+            let user = await utilisateurs.insertuser(prenom, nom, idenfifiant, mdp, date, mail);
+            return res.redirect('/connexion');
+            
+        }
+        else{
+            res.status(500).send("Vous n'avez pas 18 ans");
+        }
         
-        let user = await utilisateurs.insertuser(prenom, nom, idenfifiant, mdp, date, mail);
-        return res.redirect('/connexion');
     }
     catch (err){
         console.log(err);

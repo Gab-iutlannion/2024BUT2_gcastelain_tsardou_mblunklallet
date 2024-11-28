@@ -1,5 +1,6 @@
 const database = require("./database.js");
 
+
 async function getUserById (id) {
     sql ="SELECT * FROM utilisateur WHERE id = ?";
     return new Promise((resolve, reject) => {
@@ -39,6 +40,8 @@ async function insertuser (prenom, nom, idenfifiant, mdp, date, mail) {
         });
     });
 };
+
+
 
 async function insertagent (prenom, nom, idenfifiant, mdp, date, mail){
     ajout ="INSERT INTO utilisateur ( login, password, nom, prenom, ddn, email, type_utilisateur) VALUES (?,?,?,?,?,?,?)";
