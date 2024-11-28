@@ -3,7 +3,7 @@
     padding: 0;
 }
 main{
-    height: 80vh;
+  
     padding-top: 100px;
     display: flex;
     flex-direction: column;
@@ -11,8 +11,9 @@ main{
     justify-content: center;
 }
 .component{
+    margin-top: 100px;
     background-color: #3C096C;
-    height: 70%;
+    height: 70vh;
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -52,7 +53,7 @@ main{
     
 }
 
-.outils button{
+button{
     height: 50px;
     width: 300px;
     border-radius: 20px;
@@ -66,8 +67,34 @@ main{
 
 }
 
-.outils button:hover{
+button:hover{
     background-color: #3C096C;
     border: 2px solid white;
     color: white;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    height: 30px;
+    width: 300px;
+    color: black;
+    font-size: 1.2em;
+   
+}
+form h3{
+    margin-top: 30px;
+}
+
+
+form button{
+    margin-top: 50px;
+}
+
+.mdp{
+    margin-top: 50px;
 }

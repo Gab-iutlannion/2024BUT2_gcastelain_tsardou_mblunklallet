@@ -27,10 +27,13 @@
                 <p>|</p>
             <% } %>
             <% if (login == true){ %>
-                <a href="/info_profil"><img src="img/tete.svg" alt=""></a>
+                <% if (role == 'client'){ %>
+                    <a href="/info_profil"><img src="img/tete.svg" alt=""></a>
+                <% } %>
+               
                 <a href="/panier"><img src="/img/panier.svg" alt=""></a>
             <% } else { %>
-                <a href="connexion">Se Connecter</a>
+                <a href="/connexion">Se Connecter</a>
             <% } %>
         </div>
     </nav>

@@ -55,12 +55,41 @@ async function insertagent (prenom, nom, idenfifiant, mdp, date, mail){
 };
 
 
+async function modifierUser (nom, prenom, ddn, email, login ){
+    modifier ="UPDATE utilisateur  SET nom = ?, prenom = ?, ddn = ?, email = ?  WHERE login = ? ";
+    return new Promise((resolve, reject) => {
+        database.query(modifier, [nom, prenom, ddn, email, login], (err, results) => {
+            if (err) {
+                return reject(err);
+            }
+            console.log(results);
+            resolve(results);
+          
+        });
+    });
+};
+
+async function modifierMdp (password, login){
+    modifier ="UPDATE utilisateur SET password = ?  WHERE login = ? ";
+    return new Promise((resolve, reject) => {
+        database.query(modifier, password, login, (err, results) => {
+            if (err) {
+                return reject(err);
+            }
+            console.log(results);
+            resolve(results);
+          
+        });
+    });
+};
 
 
 
 
 
 
-module.exports = {getUserById, getUserBylogin, insertuser, insertagent };
+
+
+module.exports = {getUserById, getUserBylogin, insertuser, insertagent, modifierUser, modifierMdp };
 
 

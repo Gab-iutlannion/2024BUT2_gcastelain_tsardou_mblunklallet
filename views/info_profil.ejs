@@ -12,15 +12,40 @@
     <main>
         <div class="component">
             <div class="info">
-                <p>Nom : Sardou</p>
-                <p>Prénom : Sardou</p>
-                <p>Date de naissance : Sardou</p>
-                <p>Mot de passe : Sardou</p>
-                <p>Adresse mail : Sardou</p>
+
+                <form action="" method="POST">
+                    <h3>Login :</h3>
+                    <input type="text" id="login" name="login" value="<%= identifiant %> " readonly>
+                    <h3>Nom :</h3>
+                    <input type="text" id="nom" name="nom" value="<%= nom %>" required>
+                    <h3>Prenom :</h3>
+                    <input type="text" id="prenom" name="prenom" value="<%= prenom %>" required>
+                    <h3>Date de naissance :</h3>
+                    <input type="date" id="ddn" name="ddn" value="<%= ddn %>" required>
+                    <h3>Mail :</h3>
+                    <input type="text" id="email" name="email" value="<%= email %>" required>
+
+                    <a href="./info_profil.ejs"><button class="modifier" type="submit">Enregister vos informations </button></a>
+                </form>
+
+            </div>
+            <div class="mdp">
+                <form action="" method="POST">
+                    <h2>Modifier votre mot de passe</h3>
+                    <h3>Ancien mot de passe :</h3>
+                    <input type="password" id="password" name="password" required>
+                    <button class="modifier" type="submit">Valider</button>
+
+                
+                    
+                        <h3>Nouveau mot de passe :</h3>
+                        <input type="password" id="newpassword" name="newpassword" required>
+
+                  
+                </form>
             </div>
             <div class="outils">
-                <a href=""><button class="modifier"> Modifier vos informations </button></a>
-                <a href=""><button class="deconnexion">Se déconnecter</button></a>
+                <a href="/logout"><button class="deconnexion">Se déconnecter</button></a>
             </div>
         </div>
     </main>
