@@ -86,7 +86,10 @@ async function modifierMdp (password, login){
     });
 };
 
-
+async function updatePassword(userId, newPassword) {
+    const query = 'UPDATE utilisateurs SET password = ? WHERE id = ?';
+    return db.query(query, [newPassword, userId]);
+}
 
 
 
