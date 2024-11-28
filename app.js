@@ -11,7 +11,6 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
@@ -26,6 +25,22 @@ app.use(function (req, res, next) {
     if (req.session.username) {
         res.locals.identifiant = req.session.username;
     }
+    if (req.session.mdp) {
+        res.locals.mdp = req.session.mdp;
+    }
+    if (req.session.nom) {
+        res.locals.nom = req.session.nom;
+    }
+    if (req.session.prenom) {
+        res.locals.prenom = req.session.prenom;
+    }
+    if (req.session.ddn) {
+        res.locals.ddn = req.session.ddn;
+    }
+    if (req.session.email) {
+        res.locals.email = req.session.email;
+    }
+    
     if (req.session.role) {
         res.locals.role = req.session.role;
     }
@@ -45,7 +60,7 @@ app.use(function (req, res, next) {
 app.get('/', async function (req, res) {
     try {
         let user = await utilisateurs.getUserById(req.session.id);
-        res.render('info_profil', { user });
+        res.render('accueil', { user });
     } catch (err) {
         console.log(err);
         res.status(500).send('Erreur lors de la récuperation des données');
@@ -55,7 +70,7 @@ app.get('/', async function (req, res) {
 app.get('/catalogue', async function(req, res) { 
     try {
         let liste_product = await product.getAllProduct();
-        res.render('catalogue', { liste_product });
+        res.render('./catalogue', { liste_product });
     } catch (err) {
         console.log(err);
         res.status(500).send('Erreur lors de la récuperation des données');
@@ -102,7 +117,35 @@ app.get('/panier', function (req, res) {
 
 app.get('/info_profil', function (req, res) {
     res.render("./info_profil");
-   res.render("./info_profil");
+});
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.redirect('/info_profil'); 
+        }
+    res.clearCookie('connect.sid'); 
+    res.redirect('/accueil');
+    });
+});
+app.post('/info_profil', async (req, res) =>{
+    const login = req.body.login;
+    const nom = req.body.nom;
+    const prenom = req.body.prenom;
+    const ddn = req.body.ddn;
+    const email = req.body.email;
+    try {
+        let user = await utilisateurs.modifierUser(nom, prenom, ddn, email, login);
+        req.session.nom = nom;
+        req.session.prenom = prenom;
+        req.session.ddn = ddn;
+        req.session.email = email;
+        return res.redirect('/info_profil');
+    }
+    
+    catch (err) {
+        console.log(err);
+        res.status(500).send('Erreur lors de la modification des données');
+    };
 });
 
 app.get('/ajouter', function (req, res) {
@@ -116,7 +159,7 @@ app.get('/product/:id', async (req, res) => {
     let produit = await product.getProductbyid(productId);
     console.log(produit);
 
-    res.render('product', { produit });
+    res.render('./product', { produit });
     
 });
 
@@ -135,6 +178,11 @@ app.post('/connexion', async (req, res) => {
 
                     req.session.login = true;
                     req.session.username = identifiant;
+                    req.session.mdp = mdp;
+                    req.session.nom = user[0].nom;
+                    req.session.prenom = user[0].prenom;
+                    req.session.ddn = user[0].ddn;
+                    req.session.email = user[0].email;
                     req.session.role = user[0].type_utilisateur;
                     req.session.userId = user[0].id;
                     console.log("l id est " + req.session.userId);
@@ -174,6 +222,7 @@ app.post('/inscription', async (req, res) => {
     const mail = req.body.mail;
 
     try{
+        
         let user = await utilisateurs.insertuser(prenom, nom, idenfifiant, mdp, date, mail);
         return res.redirect('/connexion');
     }
